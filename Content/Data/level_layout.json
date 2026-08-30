@@ -1,0 +1,98 @@
+{
+  "notes": "All coordinates/sizes are in Unreal centimeters (1m = 100). Center = actor location, size = full extents (box width/depth/height), not half-extents. Feel free to hand-tune every value in the editor after the first run - this file only drives the initial greybox pass.",
+  "player_start": { "location": [-10000, -10000, 900] },
+
+  "zones": [
+    {
+      "id": "A",
+      "name": "Start Plateau",
+      "type": "plateau",
+      "description": "Overgrown high ground. Safe start point with a view over the flooded city.",
+      "center": [-10000, -10000, 400],
+      "size": [4000, 4000, 800]
+    },
+    {
+      "id": "B",
+      "name": "Sunken Boulevard",
+      "type": "flooded_street",
+      "description": "Main street, flooded. Water surface at Z=0, road bed below.",
+      "center": [-2000, -4000, -300],
+      "size": [3000, 14000, 600],
+      "water_surface_z": 0,
+      "water_footprint_center": [-2000, -4000, -300],
+      "water_footprint_size": [3400, 14400, 1]
+    },
+    {
+      "id": "C",
+      "name": "The Cathedral",
+      "type": "building",
+      "description": "Main exploration landmark: collapsed roof, flooded ground floor, light shafts.",
+      "center": [6000, 4000, 0],
+      "footprint": [8000, 8000],
+      "wall_height": 3000,
+      "wall_thickness": 200,
+      "roof_gap_center": [6000, 4000],
+      "roof_gap_size": [3000, 3000],
+      "floor_water_z": -100
+    },
+    {
+      "id": "D",
+      "name": "Underwater Passage",
+      "type": "underwater_tunnel",
+      "description": "Fully submerged shortcut connecting the boulevard to the semi-basement.",
+      "center": [2000, 8000, -900],
+      "size": [1600, 4000, 600]
+    },
+    {
+      "id": "E",
+      "name": "Semi-Basement",
+      "type": "basement",
+      "description": "Small flooded room reached via the underwater passage. Water drains here when the puzzle is solved.",
+      "center": [2000, 11000, -1000],
+      "size": [3000, 3000, 900],
+      "water_start_z": -700,
+      "water_drained_z": -1000
+    },
+    {
+      "id": "F",
+      "name": "Bell Tower Viewpoint",
+      "type": "tower",
+      "description": "Final landmark. Climbing it reveals the whole prototype area.",
+      "center": [9000, 9000, 2250],
+      "size": [1600, 1600, 4500],
+      "platform_top_z": 4500
+    }
+  ],
+
+  "checkpoints": [
+    { "id": "CP0_Start", "location": [-10000, -10000, 900] },
+    { "id": "CP1_BoulevardToCathedral", "location": [3000, 0, 100] },
+    { "id": "CP2_BeforePassage", "location": [2000, 6500, -50] },
+    { "id": "CP3_TowerBase", "location": [9000, 9000, 100] }
+  ],
+
+  "goal": { "location": [9000, 9000, 4350] },
+
+  "puzzle": {
+    "id": "Puzzle_Drain01",
+    "lever_location": [6500, 4500, 50],
+    "gate_actor_id": "Gate_D_Entrance",
+    "gate_location": [2000, 6800, -300],
+    "gate_size": [1600, 100, 700],
+    "water_body_id": "WaterVolume_E",
+    "gate_open_height": 500,
+    "water_lower_amount": 300,
+    "activation_duration": 3.0
+  },
+
+  "discoveries": [
+    { "id": "station_sign", "display_name": "Old Station Sign", "description": "A rusted directional sign, half-swallowed by vines.", "location": [-6000, -8000, 450] },
+    { "id": "old_photo", "display_name": "Faded Photograph", "description": "A family photo, laminated by decades underwater.", "location": [-1000, -4000, 100] },
+    { "id": "broken_device", "display_name": "Broken Handheld Device", "description": "Screen shattered. Still faintly warm from a long-dead battery.", "location": [6000, 2000, 50] },
+    { "id": "city_emblem", "display_name": "City Emblem", "description": "The city's old crest, cast in green-stained bronze.", "location": [4500, 4000, 900] },
+    { "id": "lost_bag", "display_name": "Lost Bag", "description": "Someone left in a hurry.", "location": [2200, 7000, 50] },
+    { "id": "short_note", "display_name": "Short Note", "description": "A few words, barely legible, folded into a pipe joint.", "location": [2000, 11000, -800] },
+    { "id": "shop_sign", "display_name": "Old Shop Sign", "description": "Faded lettering for a shop that sold something, once.", "location": [-2000, -2000, -150] },
+    { "id": "keepsake_key", "display_name": "Keepsake Key", "description": "A small key on a ribbon, tied to the tower railing.", "location": [9000, 9000, 4300] }
+  ]
+}

@@ -1,0 +1,28 @@
+# Unreal Engine generated/binary folders
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vs/
+.vscode/
+*.VC.db
+*.opensdf
+*.sdf
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
+
+# Compiled binaries
+*.pdb
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Large binary content (created via Editor/Python once assets exist)
+Content/**/*.uasset
+Content/**/*.umap
+!Content/Python/**
+!Content/Data/**

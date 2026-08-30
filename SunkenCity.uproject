@@ -1,0 +1,21 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.4",
+	"Category": "",
+	"Description": "Sunken City - a drowned, plant-reclaimed city exploration prototype (vertical slice).",
+	"Modules": [
+		{
+			"Name": "SunkenCity",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{ "Name": "Water", "Enabled": true },
+		{ "Name": "PCG", "Enabled": true },
+		{ "Name": "Niagara", "Enabled": true },
+		{ "Name": "PythonScriptPlugin", "Enabled": true },
+		{ "Name": "EditorScriptingUtilities", "Enabled": true },
+		{ "Name": "ModelingToolsEditorMode", "Enabled": true }
+	]
+}
